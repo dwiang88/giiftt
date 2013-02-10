@@ -15,19 +15,17 @@ http://giiftt.com <br />
 ################### <br />
 Feature <br />
 ################### <br />
-a. 	Percetakkan menggunakan data photo, Instagram, Facebook, Flickr. <br />
-	Menggunakan API.  <br />
-	Untuk Twitter kita akan memakai Twitter API Trending Topic yang akan di sync ke API Instagram, untuk melihat Trending Topic Photo. <br />
+- Percetakkan menggunakan data photo, Instagram, Facebook, Flickr. 
+	Menggunakan API.  
+	Untuk Twitter kita akan memakai Twitter API Trending Topic yang akan di sync ke API Instagram, untuk melihat Trending Topic Photo. 
 
-b.	Percetakkan meliputi, Table Book, Seamless Photo Book, Canvas, Frame Canvas (kerjasama dengan PicBitPhotobook), dan T-shirt ( Toko baju di samping Binus BNCC ). <br />
+- Percetakkan meliputi, Table Book, Seamless Photo Book, Canvas, Frame Canvas (kerjasama dengan PicBitPhotobook), dan T-shirt ( Toko baju di samping Binus BNCC ). 
 
-c.	Souvenir akan menjual barang-barang seperti boneka, dan souvenir lainnya => kerjasama dengan Toko Hendra Hadi, dan kalau bisa di sekitar Binus. <br />
+- Souvenir akan menjual barang-barang seperti boneka, dan souvenir lainnya => kerjasama dengan Toko Hendra Hadi, dan kalau bisa di sekitar Binus. 
 
-d. 	Metode pembayaran menggunakan Bank Transfer (BCA dan BNI), Credit card (no required). <br />
+- Metode pembayaran menggunakan Bank Transfer (BCA dan BNI), Credit card (no required). 
 
-e. 	User juga bisa menjual souvenir mereka, contohnya : User A menjual souvenir mereka dalam bentuk boneka gitu. 
-atau user photo pake instagram, lalu foto nya dijual gitu. <br />
+- User juga bisa menjual souvenir mereka, contohnya : User A menjual souvenir mereka dalam bentuk boneka gitu. 
+atau user photo pake instagram, lalu foto nya dijual gitu. 
 
-f. 	User juga bisa memberikan hadiah atau gift mereka ke user lainnya, dengan mengisi alamat user yang akan menerima gift tersebut. User tsb akan menerima konfirmasi lewat email, twitter, facebook, sms.  <br />
-
-g. 	..... <br />
+- User juga bisa memberikan hadiah atau gift mereka ke user lainnya, dengan mengisi alamat user yang akan menerima gift tersebut. User tsb akan menerima konfirmasi lewat email, twitter, facebook, sms.  
