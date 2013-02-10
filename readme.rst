@@ -4,13 +4,15 @@ What is Giiftt
 
 Giiftt adalah website yang melayani percetakkan photobook, canvas, frame canvas, t-shirt dan souvenir. Giiftt juga memungkinkan user untuk menjual souvenir mereka dan juga memberi nya kepada orang yang dicintai.
 
-###################
-http://giiftt.com
-###################
 
-###################
+
+*******************
+http://giiftt.com
+*******************
+
+*******************
 Feature
-###################
+*******************
 1. 	Percetakkan menggunakan data photo : Instagram, Facebook, Flickr.
 	Menggunakan API. 
 	Untuk Twitter kita akan memakai Twitter API Trending Topic yang akan di sync ke API Instagram, untuk melihat Trending Topic Photo.
