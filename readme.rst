@@ -15,11 +15,11 @@ http://giiftt.com <br />
 ################### <br />
 Feature <br />
 ################### <br />
-1. 	Percetakkan menggunakan data photo : Instagram, Facebook, Flickr. <br />
+1. 	Percetakkan menggunakan data photo, Instagram, Facebook, Flickr. <br />
 	Menggunakan API.  <br />
 	Untuk Twitter kita akan memakai Twitter API Trending Topic yang akan di sync ke API Instagram, untuk melihat Trending Topic Photo. <br />
 
-2. 	Percetakkan meliputi : Table Book, Seamless Photo Book, Canvas, Frame Canvas (kerjasama dengan PicBitPhotobook), dan T-shirt ( Toko baju di samping Binus BNCC ). <br />
+2. 	Percetakkan meliputi, Table Book, Seamless Photo Book, Canvas, Frame Canvas (kerjasama dengan PicBitPhotobook), dan T-shirt ( Toko baju di samping Binus BNCC ). <br />
 
 3.	Souvenir akan menjual barang-barang seperti boneka, dan souvenir lainnya => kerjasama dengan Toko Hendra Hadi, dan kalau bisa di sekitar Binus. <br />
 
@@ -28,6 +28,6 @@ Feature <br />
 5. 	User juga bisa menjual souvenir mereka, contohnya : User A menjual souvenir mereka dalam bentuk boneka gitu. 
 atau user photo pake instagram, lalu foto nya dijual gitu. <br />
 
-6. 	User juga bisa memberikan hadiah / gift mereka ke user lainnya, dengan mengisi alamat user yang akan menerima gift tersebut. User tsb akan menerima konfirmasi lewat email, twitter, facebook, sms.  <br />
+6. 	User juga bisa memberikan hadiah atau gift mereka ke user lainnya, dengan mengisi alamat user yang akan menerima gift tersebut. User tsb akan menerima konfirmasi lewat email, twitter, facebook, sms.  <br />
 
 7. 	..... <br />
