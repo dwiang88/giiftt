@@ -6,13 +6,15 @@ Giiftt adalah website yang melayani percetakkan photobook, canvas, frame canvas,
 <br />
 <br />
 <br />
-*******************
-http://giiftt.com
-*******************
-
-*******************
-Feature
-*******************
+################### <br />
+http://giiftt.com <br />
+################### <br />
+<br />
+<br />
+<br />
+################### <br />
+Feature <br />
+################### <br />
 1. 	Percetakkan menggunakan data photo : Instagram, Facebook, Flickr.
 	Menggunakan API. 
 	Untuk Twitter kita akan memakai Twitter API Trending Topic yang akan di sync ke API Instagram, untuk melihat Trending Topic Photo.
