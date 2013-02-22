@@ -18,6 +18,13 @@ class Home extends MY_Controller {
 		$this->load->view('t/home/home_canvas_view', $this->data);
 	}
 
+	function photobook(){
+		$this->_default_param(
+			"", "", "", "Photo Book"
+		);
+		$this->load->view('t/home/home_photobook_view', $this->data);
+	}
+
 	function _default_param($css = array(), $js = array(), $meta = array(), $title = ""){
 		$default_css = array(
 			'css/front.css'

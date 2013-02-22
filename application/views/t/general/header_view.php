@@ -26,9 +26,16 @@
                 <div class="container">
                     <a href="#" class="brand">givthing</a>
                     <ul class="nav pull-right">
-                        <li><a href="#">Coffee Table Book</a></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="#">Seamless Table Book</a></li>
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Photo Book <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Coffee Table Book</a></li>
+                                <li><a href="#">Seamless Table Book</a></li>
+                            </ul>
+                        </li>
+                        -->
+                        <li><a href="#">Photo Book</a></li>
                         <li class="divider-vertical"></li>
                         <li><a href="#">Canvas</a></li>
                         <li class="divider-vertical"></li>

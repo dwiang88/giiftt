@@ -12,7 +12,7 @@
 		</div>
 	</div>
 
-	<div class="showcase show_border_canvas canvas2_frame">
+	<div class="showcase show_border_frame canvas2_frame">
 		<div class="canvas2_detail">
 			<h2>High Quality Canvas</h2>
 			<p>We know that some moments are just too great to be kept stored in your camera. And great photos deserve to be printed only on the best quality canvas. So your vibrant image and its popping image will remain on textured feel to revisit through a lifetime.</p>
