@@ -16,6 +16,7 @@ class Home extends MY_Controller {
 			'css/front.css'
 		);
 		if (!empty($css)) $css = array_merge($default_css, $css);
+		else $css = $default_css;
 		//if (!empty($js)) $js = array_merge($default_js, $js);
 		$this->default_param($css, $js, $meta, $title);
 	}
