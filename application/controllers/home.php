@@ -5,10 +5,6 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Home extends MY_Controller {
 
 	function index(){
-		$this->default_param(
-			array(
-				'css/front.css'
-			), "", "", "Home"
 		$this->_default_param(
 			"", "", "", "Home"
 		);
