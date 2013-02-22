@@ -11,6 +11,13 @@ class Home extends MY_Controller {
 		$this->load->view('t/home/index_view', $this->data);
 	}
 
+	function canvas(){
+		$this->_default_param(
+			"", "", "", "Canvas"
+		);
+		$this->load->view('t/home/home_canvas_view', $this->data);
+	}
+
 	function _default_param($css = array(), $js = array(), $meta = array(), $title = ""){
 		$default_css = array(
 			'css/front.css'

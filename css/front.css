@@ -45,6 +45,10 @@
 }
 
 /*custom css*/
+body{
+	font-family: OpenSans_Regular;
+}
+
 .btn_loginfb{
 	background:url('../images/loginfb.png') no-repeat;
 	width:180px;
@@ -64,7 +68,7 @@
 }
 
 .container_content{
-	margin-top:60px;
+	margin-top:100px;
 }
 
 .figure{
@@ -182,13 +186,15 @@
 	text-align: center;
 	padding: 30px 0;
 	margin-top: 70px;
-	border-top: 1px solid #e5e5e5;
-	background-color: #f5f5f5;
+	border-top: 3px solid #e1472f;
+	background-color: #323232;
+	font-size: 12px;
+	font-family: OpenSans_Light;
 }
 
 .footer p {
 	margin-bottom: 0;
-	color: #777;
+	color: #fff;
 }
 
 .footer-links {
@@ -203,5 +209,61 @@
 	padding: 0 2px;
 }
 .muted {
-	color: #999999;
+	color: #fff;
+}
+
+
+
+.showcase{
+	position: relative;
+}
+.showcase.show_border_canvas{
+	border-top: 1px solid #e7e7e7;
+	border-bottom:1px solid #e7e7e7;
+	margin:30px 0;
+}
+.canvas1_img{
+	width:524px;
+	height:447px;
+	background:url('../images/canvas3.png') no-repeat;
+}
+.canvas1_detail{
+	position: absolute;
+	top:90px;
+	right: 0;
+}
+.showcase h2{
+	font-family: OpenSans_Light;
+	font-size: 30px;
+	font-weight: normal;
+}
+.showcase h2 b{
+	font-family: OpenSans_Bold;
+}
+.showcase h3{
+	font-size: 19px;
+	line-height: 0.5;
+	font-family: OpenSans_Light;
+	color:#666;
+}
+.showcase h4{
+	font-family: OpenSans_Light;
+	font-size:17px;
+	margin-top:50px;
+}
+.canvas2_img{
+	position:absolute;
+	top:-1px;
+	right: 0;
+	width:365px;
+	height:450px;
+	background:url('../images/canvas4.png') no-repeat;
+}
+.canvas2_frame{
+	height:449px;
+}
+.canvas2_detail{
+	width:430px;
+	position: relative;
+	top: 100px;
 }
