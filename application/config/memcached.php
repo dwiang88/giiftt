@@ -1,46 +1,41 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP 5.2.4 or newer
- *
- * NOTICE OF LICENSE
- *
- * Licensed under the Academic Free License version 3.0
- *
- * This source file is subject to the Academic Free License (AFL 3.0) that is
- * bundled with this package in the files license_afl.txt / license_afl.rst.
- * It is also available through the world wide web at this URL:
- * http://opensource.org/licenses/AFL-3.0
- * If you did not receive a copy of the license and are unable to obtain it
- * through the world wide web, please send an email to
- * licensing@ellislab.com so we can send you a copy immediately.
- *
- * @package		CodeIgniter
- * @author		EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2013, EllisLab, Inc. (http://ellislab.com/)
- * @license		http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
- * @link		http://codeigniter.com
- * @since		Version 2.0
- * @filesource
- */
+<?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-| -------------------------------------------------------------------------
-| Memcached settings
-| -------------------------------------------------------------------------
-| Your Memcached servers can be specified below.
-|
-|	See: http://codeigniter.com/user_guide/libraries/caching.html#memcached
-|
-*/
-$config = array(
+
+// --------------------------------------------------------------------------
+// Servers
+// --------------------------------------------------------------------------
+$memcached['servers'] = array(
+
 	'default' => array(
-		'hostname' => '127.0.0.1',
-		'port'     => '11211',
-		'weight'   => '1',
-	),
+
+			'host'			=> 'localhost',
+			'port'			=> '11211',
+			'weight'		=> '1',
+			'persistent'	=> FALSE
+						
+		)
 );
 
+// --------------------------------------------------------------------------
+// Configuration
+// --------------------------------------------------------------------------
+$memcached['config'] = array(
+
+	'prefix' 				=> '',						// Prefixes every key value (useful for multi environment setups)
+	'compression'			=> FALSE,					// Default: FALSE or MEMCACHE_COMPRESSED Compression Method (Memcache only).
+	
+	// Not necessary if you already are using 'compression'
+	'auto_compress_tresh'	=> FALSE,					// Controls the minimum value length before attempting to compress automatically.
+	'auto_compress_savings'	=> 0.2,						// Specifies the minimum amount of savings to actually store the value compressed. The supplied value must be between 0 and 1.
+	
+	'expiration'			=> 3600,					// Default content expiration value (in seconds)
+	'delete_expiration'		=> 0						// Default time between the delete command and the actual delete action occurs (in seconds) 
+	
+);
+
+
+$config['memcached'] = $memcached;
+
 /* End of file memcached.php */
-/* Location: ./application/config/memcached.php */
+/* Location: ./system/application/config/memcached.php */
