@@ -49,6 +49,11 @@ body{
 	font-family: OpenSans_Regular;
 }
 
+.navbar-inner{
+	border-bottom: 1px solid #1b1b1b;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .15);
+}
+
 .btn_loginfb{
 	background:url('../images/loginfb.png') no-repeat;
 	width:180px;
@@ -326,6 +331,50 @@ body{
 	top: 70px;
 	right:0;
 }
+
+
+
+
+.row_border{
+	border:2px solid #d0e9f9;
+	padding: 40px 10px;
+	border-radius: 5px;
+	background-color: #f3f8fc;
+	position: relative;
+	margin-top: 70px;
+}
+
+
+
+.pp_frame_block{
+	width:173px;
+	height:182px;
+	position:absolute;
+	top:-100px;
+	left:50%;
+	margin-left:-86px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-image: url('../images/photoprofileframe2.png');
+}
+.pp_frame_block img{
+	width:159px;
+	height:159px;
+	position: absolute;
+	top: 4px;
+	left: 6px;
+}
+.form_register{
+	margin-top: 80px;
+}
+
+
+
+
+
+
+
 
 
 
