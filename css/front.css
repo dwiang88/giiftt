@@ -410,6 +410,10 @@ body{
 .album_link a{
 	font-family: OpenSans_Light;
 	font-size: 15px;
+	color:#3b5998;
+}
+.album_type{
+	font-size:13px;
 	color:#242424;
 }
 
@@ -429,6 +433,25 @@ body{
 	border-radius: 4px;
 	z-index: 999;
 }
+.fix_profile_block:hover{
+	right:348px;
+}
+.profile_block:hover{
+	width:300px;
+}
+.profile_block:hover .profile_block_wrapper{
+	background-color: rgba(247, 247, 247, 1);
+	border-radius: 4px 4px 0 0;
+}
+.profile_block:hover .profile_block_detail{
+	width:299px;
+	height:280px;
+	visibility:visible;
+	opacity:1;
+}
+.profile_block:hover .profile_block_detail .profile_image{
+	width:299px;
+}
 .profile_block_wrapper{
 	border-radius: 4px ;
 	box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, .75);
@@ -436,10 +459,58 @@ body{
 	white-space: nowrap;
 	word-wrap: normal;
 	background-color: rgba(247, 247, 247, .85);
+	cursor: pointer;
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	transition: background-color .2s;
 }
 .profile_title{
 	font-size: 13px;
 	font-family: OpenSans_Bold;
 }
+.profile_block_detail{
+	background-color:#fff;
+	border: 1px solid rgba(28, 63, 138, .25);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2);
+	border-radius: 0 0 4px 4px;
+	height:0;
+	visibility:hidden;
+	opacity:0;
+	width:222px;
+	-webkit-transition: height .2s ease-in-out, visibility .2s ease-in-out, opacity .5s ease;
+	-moz-transition: height .2s ease-in-out, visibility .2s ease-in-out, opacity .5s ease;
+	transition: height .2s ease-in-out, visibility .2s ease-in-out, opacity .5s ease;
+	position: relative;
+}
+.profile_block_detail .profile_image{
+	width:222px;
+	height:200px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	display:block;
+}
+.profile_arrow{
+	width:20px;
+	height: 10px;
+	background: url('../images/arrow.png') no-repeat;
+	position: absolute;
+	top: 190px;
+	left: 20px;
+}
+
+.profile_detail h2{
+	font-family: OpenSans_Bold;
+	font-size: 20px;
+	color:#242424;
+	line-height: 0;
+	padding: 10px 12px;
+}
+.profile_item{
+	border-top:1px solid #ddd;
+	padding:10px;
+}
+
+
 
 
