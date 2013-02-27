@@ -39,7 +39,26 @@
                         <li class="divider-vertical"></li>
                         <li><a href="#">Canvas</a></li>
                         <li class="divider-vertical"></li>
-                        <li><a href="#" class="btn_loginfb">Login FB</a></li>
+
+                        <?php if ($this->session->userdata('islogin')){ 
+
+                            $users = $this->session->userdata('users');
+
+                            ?>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $users['NamaUser']; ?> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Affiliate</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Confirm Payments</a></li>
+                                <li><a href="<?php echo base_url(); ?>auth/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                        <?php }else{ ?>
+                        <li><a href="<?php echo $this->access->loginUrl; ?>" class="btn_loginfb">Login FB</a></li>
+                        <?php } ?>
+
                     </ul>
                 </div>
             </div>

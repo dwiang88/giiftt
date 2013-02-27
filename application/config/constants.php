@@ -73,14 +73,8 @@ define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 */
 define('SHOW_DEBUG_BACKTRACE', TRUE);
 
-define('FACEBOOK_APP_ID', '361857880558980');
-define('FACEBOOK_APP_SECRET', '315a8d3265923a6ad525b47299ead547');
-
-define('INSTAGRAM_APP_ID', '4e9a9197d6e149dc9b82cd40972a0c1c');
-define('INSTAGRAM_APP_SECRET', 'bcaba0be0ca345dd80285e575dccc6a9');
-
-define('LINKEDIN_APP_ID', 'to2uiis6puby');
-define('LINKEDIN_APP_SECRET', 'ZoapjjLk2xhoJP1c');
+define('FACEBOOK_APP_ID', '220345254775551');
+define('FACEBOOK_APP_SECRET', '72070641519d72d149ce01db7b55401d');
 
 define('default_title', 'Giiftt');
 

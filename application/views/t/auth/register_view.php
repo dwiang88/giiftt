@@ -6,38 +6,26 @@
 		<div class="span7 row_border">
 
 			<div class="pp_frame_block">
-				<img src="<?php echo cdn_url(); ?>images/pp.jpg" alt="photoprofile" />
+				<img src="https://graph.facebook.com/<?php echo $this->dataFB['id']; ?>/picture?width=159&height=159" alt="photoprofile" />
 			</div>
 
 			<form class="form-horizontal form_register">
 			  <div class="control-group">
 			    <label class="control-label" for="inputEmail">Email</label>
 			    <div class="controls">
-			      <input type="text" id="inputEmail" class="input-xlarge" placeholder="Email">
+			      <input type="text" id="inputEmail" class="input-xlarge" placeholder="Email" value="<?php echo $this->dataFB['email']; ?>">
 			    </div>
 			  </div>
 			  <div class="control-group">
 			    <label class="control-label" for="inputName">Name</label>
 			    <div class="controls">
-			      <input type="text" id="inputName" class="input-xlarge" placeholder="Name">
+			      <input type="text" id="inputName" class="input-xlarge" placeholder="Name" value="<?php echo $this->dataFB['name']; ?>">
 			    </div>
 			  </div>
 			  <div class="control-group">
 			    <label class="control-label" for="inputUsername">Username</label>
 			    <div class="controls">
-			      <input type="text" id="inputUsername" class="input-xlarge" placeholder="Username">
-			    </div>
-			  </div>
-			  <div class="control-group">
-			    <label class="control-label" for="inputAddress">Address</label>
-			    <div class="controls">
-			    	<textarea id="inputAddress" class="input-xlarge" placeholder="Address"></textarea>
-			    </div>
-			  </div>
-			  <div class="control-group">
-			    <label class="control-label" for="inputPhone">Phone</label>
-			    <div class="controls">
-			      <input type="text" id="inputPhone" class="input-xlarge" placeholder="Phone">
+			      <input type="text" id="inputUsername" class="input-xlarge" placeholder="Username" value="<?php echo $this->dataFB['username']; ?>">
 			    </div>
 			  </div>
 			  <div class="control-group">

@@ -9,7 +9,19 @@ class Dashboard extends MY_Controller {
 	}
 
 	function canvas(){
-		$this->_default_param("", "", "", "Dashboard Canvas");
+		$this->_default_param(
+			array(
+				"css/jWindowCrop.css"
+			)
+			, 
+			array(
+				"js/jquery.jWindowCrop.js",
+				"js/filtereffects/jdataview.js",
+				"js/filtereffects/jspline.js",
+				"js/filtereffects/jquery.filterme.js",
+				"js/dashboard.js"
+			)
+			, "", "Dashboard Canvas");
 		$this->load->view("t/dashboard/canvas_view", $this->data);
 	}
 
