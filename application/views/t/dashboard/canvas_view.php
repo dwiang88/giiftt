@@ -779,13 +779,13 @@
 			<div class="canvas">
 				<div class="canvas_template canvas_template2">
 					<div class="block block1">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block2">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block3">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 				</div>
 			</div>
@@ -794,16 +794,16 @@
 			<div class="canvas">
 				<div class="canvas_template canvas_template3">
 					<div class="block block1">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block2">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block3">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block4">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 				</div>
 			</div>
@@ -812,19 +812,19 @@
 			<div class="canvas">
 				<div class="canvas_template canvas_template4">
 					<div class="block block1">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block2">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block3">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block4">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block5">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 				</div>
 			</div>
@@ -833,42 +833,42 @@
 			<div class="canvas" style="height:680px">
 				<div class="canvas_template canvas_template5">
 					<div class="block block1">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block2">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block3">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block4">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 
 					<div class="block block5">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block6">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block7">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block8">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 
 					<div class="block block9">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block10">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block11">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block12">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 				</div>
 			</div>
@@ -877,33 +877,33 @@
 			<div class="canvas" style="height:680px">
 				<div class="canvas_template canvas_template6">
 					<div class="block block1">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block2">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block3">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block4">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 
 					<div class="block block5">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 
 					<div class="block block6">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block7">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block8">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 					<div class="block block9">
-						<a href="#" class="btn btn-mini btn-change-image">Select Image</a>
+						<a href="#myModal" role="button" data-toggle="modal" class="btn btn-mini btn-change-image">Select Image</a>
 					</div>
 				</div>
 			</div>
@@ -922,14 +922,45 @@
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header</h3>
+    <h3 id="myModalLabel">Select Photo</h3>
   </div>
   <div class="modal-body">
-    <p>One fine body…</p>
+   		<ul class="nav nav-tabs" id="albumTab">
+  			<li class="active"><a href="#facebookTab" rel="facebookAlbum">Facebook</a></li>
+  			<li><a href="#instagramTab" rel="instagram">Instagram</a></li>
+  			<li><a href="#computerTab" rel="mycomputer">My Computer</a></li>
+		</ul>
+		<div class="tabContent" class="tab-content">
+			<div class="tab-pane fade active in" id="facebookTab">	
+
+				<ul class="breadcrumb" id="breadcrumbFacebook" style="display:none;margin-bottom:8px;">
+				  <li><a href="#">Back</a> <span class="divider">/</span></li>
+				</ul>
+
+				<div class="loader_container" style="display:none;">
+					<div class="loader">
+		                <div class="circle"></div>
+		                <div class="circle"></div>
+		                <div class="circle"></div>
+		                <div class="circle"></div>
+		                <div class="circle"></div>
+		            </div>
+				</div>
+
+				<ul class="galleryPhoto">
+					
+				</ul>
+			</div>
+			<div class="tab-pane fade " id="instagramTab">
+
+			</div>
+			<div class="tab-pane fade " id="computerTab">
+
+			</div>
+		</div>
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
+    <button class="btn btn-primary">Select Change</button>
   </div>
 </div>
 

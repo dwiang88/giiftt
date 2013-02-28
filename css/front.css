@@ -1099,3 +1099,210 @@ li.tmpl:hover{
 }
 */
 
+
+
+#myModal{
+	width:800px;
+	margin-left: -400px;
+}
+
+.galleryPhoto {margin:0;}
+.galleryPhoto li{
+	list-style: none;
+	margin: 0;
+	width:172px;
+	height: 145px;
+	float: left;
+	position: relative;
+	cursor: pointer;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 8px 8px 0;
+	display: inline-block;
+}
+
+.galleryPhoto li span{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 91%;
+	background-color: rgba(0,0,0,.75);
+	color: #fff;
+	font-size: 11px;
+	padding: 4px 8px;
+	text-align: center;
+}
+
+
+
+
+
+.loader {
+  	position: relative;
+	padding-top: 0;
+	width: 40px;
+	margin: 10px 20px;
+	height: 50px;
+}
+.loader .circle {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  opacity: 0;
+  -webkit-transform: rotate(225deg);
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: orbit;
+  -webkit-animation-duration: 5.5s;
+
+  -moz-transform: rotate(225deg);
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-name: orbit;
+  -moz-animation-duration: 5.5s;
+
+  -o-transform: rotate(225deg);
+  -o-animation-iteration-count: infinite;
+  -o-animation-name: orbit;
+  -o-animation-duration: 5.5s;
+}
+.loader .circle:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #3D6AA2;
+  /* Pick a color */
+
+}
+.loader .circle:nth-child(2) {
+  -webkit-animation-delay: 240ms;
+  -moz-animation-delay: 240ms;
+  -o-animation-delay: 240ms;
+}
+.loader .circle:nth-child(3) {
+  -webkit-animation-delay: 480ms;
+  -moz-animation-delay: 480ms;
+  -o-animation-delay: 480ms;
+}
+.loader .circle:nth-child(4) {
+  -webkit-animation-delay: 720ms;
+  -moz-animation-delay: 720ms;
+  -o-animation-delay: 720ms;
+}
+.loader .circle:nth-child(5) {
+  -webkit-animation-delay: 960ms;
+  -moz-animation-delay: 960ms;
+  -o-animation-delay: 960ms;
+}
+@-webkit-keyframes orbit {
+  0% {
+    -webkit-transform: rotate(225deg);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  7% {
+    -webkit-transform: rotate(345deg);
+    -webkit-animation-timing-function: linear;
+  }
+  30% {
+    -webkit-transform: rotate(455deg);
+    -webkit-animation-timing-function: ease-in-out;
+  }
+  39% {
+    -webkit-transform: rotate(690deg);
+    -webkit-animation-timing-function: linear;
+  }
+  70% {
+    -webkit-transform: rotate(815deg);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  75% {
+    -webkit-transform: rotate(945deg);
+    -webkit-animation-timing-function: ease-out;
+  }
+  76% {
+    -webkit-transform: rotate(945deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(945deg);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes orbit {
+  0% {
+    -moz-transform: rotate(225deg);
+    opacity: 1;
+    -moz-animation-timing-function: ease-out;
+  }
+  7% {
+    -moz-transform: rotate(345deg);
+    -moz-animation-timing-function: linear;
+  }
+  30% {
+    -moz-transform: rotate(455deg);
+    -moz-animation-timing-function: ease-in-out;
+  }
+  39% {
+    -moz-transform: rotate(690deg);
+    -moz-animation-timing-function: linear;
+  }
+  70% {
+    -moz-transform: rotate(815deg);
+    opacity: 1;
+    -moz-animation-timing-function: ease-out;
+  }
+  75% {
+    -moz-transform: rotate(945deg);
+    -moz-animation-timing-function: ease-out;
+  }
+  76% {
+    -moz-transform: rotate(945deg);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: rotate(945deg);
+    opacity: 0;
+  }
+}
+
+
+@-o-keyframes orbit {
+  0% {
+    -o-transform: rotate(225deg);
+    opacity: 1;
+    -o-animation-timing-function: ease-out;
+  }
+  7% {
+    -o-transform: rotate(345deg);
+    -o-animation-timing-function: linear;
+  }
+  30% {
+    -o-transform: rotate(455deg);
+    -o-animation-timing-function: ease-in-out;
+  }
+  39% {
+    -o-transform: rotate(690deg);
+    -o-animation-timing-function: linear;
+  }
+  70% {
+    -o-transform: rotate(815deg);
+    opacity: 1;
+    -o-animation-timing-function: ease-out;
+  }
+  75% {
+    -o-transform: rotate(945deg);
+    -o-animation-timing-function: ease-out;
+  }
+  76% {
+    -o-transform: rotate(945deg);
+    opacity: 0;
+  }
+  100% {
+    -o-transform: rotate(945deg);
+    opacity: 0;
+  }
+}
