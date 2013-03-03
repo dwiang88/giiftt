@@ -12,11 +12,13 @@ class Util {
 	    curl_close ($ch);
 	    if(file_exists($fullpath)){
 	        //unlink($fullpath);
-	        $fullpath = $dir . $fileName . '_' . $this->create_code(3, 'text') . $ext;
+	        $fileName = $fileName . '_' . $this->create_code(3, 'text');
+	        $fullpath = $dir . $fileName . $ext;
 	    }
 	    $fp = fopen($fullpath,'x');
 	    fwrite($fp, $rawdata);
 	    fclose($fp); 
+	    return $fileName;
 	}
 
 	function create_code( $length = 7, $type = 'text' ) {

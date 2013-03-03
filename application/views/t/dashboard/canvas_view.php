@@ -12,16 +12,18 @@
 			<h5>1. Select Size</h5>
 			<ul id="selectSize">
 				<?php 
-				$selectedPrize = $class = "";
+				$selectedPrize = $class = $product_detail_id_selected = "";
 				foreach($product_size as $k=>$v){
 					$class = "";
 					if ($k == 0) {
 						$selectedPrize = ($v->product_prize + $v->commision);
 						$class = "tmpl_active";
+						$product_detail_id_selected = $v->product_detail_id;
 					}
 				?>
 				<li class="tmpl tmpl1 <?php echo $class; ?>"
 				data-productprize="<?php echo "IDR " . number_format( ($v->product_prize + $v->commision) , 2); ?>"
+				data-productdetailid="<?php echo $v->product_detail_id; ?>"
 				>
 					<span class="display"><?php echo $v->product_size; ?></span>
 				</li>
@@ -923,9 +925,11 @@
 
 	<div class="formSubmit">
 
-		<input type="hidden" name="product_detail_id" id="product_detail_id" value="" />
-		<input type="hidden" name="templateid" id="templateid" value="" />
+		<input type="hidden" name="product_detail_id" id="product_detail_id" value="<?php echo $product_detail_id_selected; ?>" />
+		<input type="hidden" name="templateid" id="templateid" value="1" />
 		<input type="hidden" name="type" id="type" value="canvas" />
+		<input type="hidden" name="fotodetailid" id="fotodetailid" value="0" />
+		<input type="hidden" name="foto_collection_id" id="foto_collection_id" value="0" />
 
 		<button type="button" id="saveDesign" class="btn btn-inverse">Save Design</button>
 		<button type="button" id="addToCart" class="btn btn-warning">Add to Cart</button>

@@ -12,6 +12,23 @@ class Dashboard extends MY_Controller {
 	}
 
 	function index(){
+		/*save image data to image file
+		$sql = "
+		SELECT * FROM foto f WHERE 1 AND f.fotoid=4 LIMIT 1
+		";
+		$results = $this->db->query($sql)->row();
+		$fotodata = $results->fotodata;
+		/*
+		$filteredData = substr($fotodata, strpos($fotodata, ",")+1);
+		$unencodedData=base64_decode($filteredData);
+		$fp = fopen( 'img/imgedit/test.jpg', 'wb' );
+		fwrite( $fp, $unencodedData);
+		fclose( $fp );
+		
+		echo '<img src="'.$fotodata.'" />';
+		die();
+		*/
+
 		$uri = $this->uri->segment_array();
 		$this->product = $this->product_model->getProduct($uri[2]);
 		if (!empty($this->product->product_uri)){
@@ -28,6 +45,17 @@ class Dashboard extends MY_Controller {
 	}
 
 	function canvas_dashboard(){
+
+		$this->load->model('canvas_model');
+		$fdi = $this->input->get_post('fdi');
+		if (!empty($fdi)){
+			$fdiData = $this->canvas_model->getCanvasCollection($fdi);
+			echo '<pre>';
+			print_r($fdiData);
+			echo '</pre>';
+			die();
+		}
+
 		$product_size = $this->product_model->getProductSize($this->product->product_id);
 		$this->data['product_size'] = $product_size;
 		$this->_default_param(
@@ -40,7 +68,7 @@ class Dashboard extends MY_Controller {
 				"js/filtereffects/jdataview.js",
 				"js/filtereffects/jspline.js",
 				"js/filtereffects/jquery.filterme.js",
-				"js/dashboard.js"
+				"js/dashboard_canvas.js"
 			)
 			, "", "Dashboard Canvas");
 		$this->load->view("t/dashboard/canvas_view", $this->data);

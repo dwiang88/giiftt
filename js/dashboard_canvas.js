@@ -33,6 +33,7 @@ $(function() {
 		var tmpl_temp = $('#canvas_temp_' + tmpl).html();
 		$('.canvas_wrapper').empty();
 		$('.canvas_wrapper').html(tmpl_temp);
+		$('#templateid').val(tmpl);
 		return false;
 	});
 	$('#selectTemplate').find('li:first-child').click();
@@ -96,6 +97,7 @@ $(function() {
 
   		$('#facebookTab').find('#breadcrumbFacebook').show();
   		$('#facebookTab').find('#breadcrumbFacebook').append('<li class="othersLi">'+albumName+'</li>');
+  		$('#myModal').find('.modal-footer').hide();
 
   		$.post('/ajax/getPhotoAlbum', {
   			type : "facebookAlbumPhoto",
@@ -139,10 +141,12 @@ $(function() {
 
 				var t = '<img src="'+data.albumHq+'" alt="Image" style="" ' +
 				'data-original-src="'+data.albumHq+'" '+
+				'data-fileName="'+data.fileName+'"' +
 				'data-crop_x=""' +
 				'data-crop_y=""' +
 				'data-crop_w=""' +
 				'data-crop_h=""' +
+				'data-filter="Original"' +
 				'class="canvas_image" '+
 				'/>'+
 				'<div class="filter_effect xsmall_block">' +
@@ -195,8 +199,15 @@ $(function() {
 	$('#saveDesign').on('click', function(){
 		var el = $(this);
 		var canvas = $('.canvas');
+		var halaman = canvas.find('.canvas_template').attr('data-halaman');
+		var templateid = $('#templateid').val();
+		var type = $('#type').val();
+		var fotodetailid = $('#fotodetailid').val();
+		var product_detail_id = $('#product_detail_id').val();
+		var foto_collection_id = $('#foto_collection_id').val();
 		var images = new Array;
 		$.each(canvas.find('.canvas_image'), function(){
+			var urutan = $(this).closest('.block').attr('data-urutan');
 			var a = {
 				fotodata : $(this).attr('src'),
 				fotoori : $(this).attr('data-original-src'),
@@ -204,7 +215,10 @@ $(function() {
 				crop_y : $(this).attr('data-crop_y'),
 				crop_w : $(this).attr('data-crop_w'),
 				crop_h : $(this).attr('data-crop_h'),
-				style : $(this).attr('style')
+				style : $(this).attr('style'),
+				urutan : urutan,
+				filter : $(this).attr('data-filter'),
+				fileName : $(this).attr('data-fileName')
 			};
 			images.push(a);
 		});
@@ -213,10 +227,22 @@ $(function() {
 			alert('Tidak dapat disimpan, karena anda belum memulai project nya.');
 			return false;
 		}
+		$('.loader_overlay').show();
 		$.post('/ajax/saveDesign', {
-			images : images
-		}, function(){
-
+			images : images,
+			halaman : halaman,
+			templateid : templateid,
+			type : type,
+			fotodetailid : fotodetailid,
+			product_detail_id : product_detail_id,
+			foto_collection_id : foto_collection_id
+		}, function(data){
+			if (data.fotodetailid){
+				$('#fotodetailid').val(data.fotodetailid);
+				$('#foto_collection_id').val(data.fotocollectionid);
+				alert('Design saved successfull.');
+			}
+			$('.loader_overlay').hide();
 		}, 'json');
 		return false;
 	});

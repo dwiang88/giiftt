@@ -8,7 +8,15 @@
 			<h2>Say Goodbye to <b>Plain Walls</b></h2>
 			<h3>Decorate It with Your Favorite Photos.</h3>
 			<h4>Starting at <b>IDR 250.000</b></h4>
-			<a href="<?php echo $this->access->loginUrl; ?>" class="btn btn-inverse">Create Now</a>
+			<?php 
+				if ($this->session->userdata('islogin')){
+			 		$url = base_url() . 'dashboard/canvas';
+			 	}else{ 
+			 		$url = $this->access->loginUrl;
+			 	}
+			?>
+
+			<a href="<?php echo $url; ?>" class="btn btn-inverse">Create Now</a>
 		</div>
 	</div>
 

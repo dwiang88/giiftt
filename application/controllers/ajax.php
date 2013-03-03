@@ -106,8 +106,30 @@ class Ajax extends MY_Controller {
 		$url = 'img/imgedit/' . $albumId . '.jpg';
 		//$img->saveToFile($url, 90);
 		$this->load->library('util');
-		$this->util->save_image($albumHq, $url, $albumId, 'img/imgedit/', '.jpg');
-		echo json_encode(array('albumHq' => cdn_url() . $url));
+		$fileName = $this->util->save_image($albumHq, $url, $albumId, 'img/imgedit/', '.jpg');
+		$url = 'img/imgedit/' . $fileName . '.jpg';
+		echo json_encode(array(
+			'albumHq' => cdn_url() . $url,
+			'fileName' => $fileName
+		));
+	}
+
+	function saveDesign(){
+		$images = $this->input->get_post('images');
+		$halaman = $this->input->get_post('halaman');
+		$templateid = $this->input->get_post('templateid');
+		$type = $this->input->get_post('type');
+		$fotodetailid = $this->input->get_post('fotodetailid');
+		$product_detail_id = $this->input->get_post('product_detail_id');
+		$foto_collection_id = $this->input->get_post('foto_collection_id');
+		$this->load->model('canvas_model');
+		$fotocollectionid = $this->canvas_model->createCollection($foto_collection_id, $product_detail_id);
+		$fotodetailid = $this->canvas_model->savePhotoDetail($halaman, $templateid, $type, $backgroundid = 0, $fotodetailid, $fotocollectionid);
+		$this->canvas_model->savePhoto($images, $fotodetailid);
+		echo json_encode(array(
+			'fotodetailid' => $fotodetailid,
+			'fotocollectionid' => $fotocollectionid
+		));
 	}
 
 }
