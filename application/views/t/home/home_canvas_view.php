@@ -8,7 +8,7 @@
 			<h2>Say Goodbye to <b>Plain Walls</b></h2>
 			<h3>Decorate It with Your Favorite Photos.</h3>
 			<h4>Starting at <b>IDR 250.000</b></h4>
-			<a href="#" class="btn btn-inverse">Create Now</a>
+			<a href="<?php echo $this->access->loginUrl; ?>" class="btn btn-inverse">Create Now</a>
 		</div>
 	</div>
 

@@ -16,6 +16,8 @@ class Home extends MY_Controller {
 	}
 
 	function canvas(){
+		// save uri
+		$this->session->set_userdata('redirect_uri', base_url() . "dashboard/canvas");
 		$this->_default_param(
 			"", "", "", "Canvas"
 		);

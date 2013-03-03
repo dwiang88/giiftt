@@ -31,10 +31,20 @@
             </div>
         </div>
 
+        <div class="loader_overlay">
+            <div class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a href="#" class="brand">givthing</a>
+                    <a href="<?php echo base_url(); ?>" class="brand">givthing</a>
                     <ul class="nav pull-right">
                         <!--
                         <li class="dropdown">
@@ -58,10 +68,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $users['NamaUser']; ?> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Affiliate</a></li>
+                                <li><a href="#">InProgress</a></li>
+                                <li><a href="#">Love</a></li>
+                                <li><a href="#">Orders</a></li>
                                 <li><a href="#">Settings</a></li>
-                                <li><a href="#">Confirm Payments</a></li>
                                 <li><a href="<?php echo base_url(); ?>auth/logout">Logout</a></li>
                             </ul>
                         </li>

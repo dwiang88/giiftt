@@ -37,8 +37,8 @@
 			base.$image.css({'position': 'absolute', 'top': '0px', 'left': '0px'});
 			initializeDimensions();
 
-			base.$frame.find('.jwc_zoom_in').on('click.'+base.namespace, base.zoomIn);
-			base.$frame.find('.jwc_zoom_out').on('click.'+base.namespace, base.zoomOut);
+			base.$frame.delegate('.jwc_zoom_in', 'click.'+base.namespace, base.zoomIn);
+			base.$frame.delegate('.jwc_zoom_out', 'click.'+base.namespace, base.zoomOut);
 			base.$frame.on('mouseenter.'+base.namespace, handleMouseEnter);
 			base.$frame.on('mouseleave.'+base.namespace, handleMouseLeave);
 			base.$image.on('load.'+base.namespace, handeImageLoad);

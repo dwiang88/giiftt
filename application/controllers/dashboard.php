@@ -7,13 +7,29 @@ class Dashboard extends MY_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->library('memcached_library');
+		$this->load->model('product_model');
+		if (!$this->session->userdata('islogin')) redirect(base_url());
 	}
 
 	function index(){
-		
+		$uri = $this->uri->segment_array();
+		$this->product = $this->product_model->getProduct($uri[2]);
+		if (!empty($this->product->product_uri)){
+			if ($this->product->product_uri == "canvas"){
+				$this->canvas_dashboard();
+			}else{
+				show_404();
+				exit;
+			}
+		}else{
+			show_404();
+			exit;
+		}
 	}
 
-	function canvas(){
+	function canvas_dashboard(){
+		$product_size = $this->product_model->getProductSize($this->product->product_id);
+		$this->data['product_size'] = $product_size;
 		$this->_default_param(
 			array(
 				"css/jWindowCrop.css"

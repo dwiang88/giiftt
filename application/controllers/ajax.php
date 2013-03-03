@@ -44,18 +44,32 @@ class Ajax extends MY_Controller {
 			case "facebookAlbumPhoto" :
 				$dicAlbumFB = $this->memcached_library->get('dicAlbumFB#' . $id);
 				if ($dicAlbumFB == FALSE){
-					$dataAlbumFB = $this->access->facebook->api('/'.$id.'/photos');
-					$dataAlbumFB = $dataAlbumFB['data'];
 					$dicAlbumFB = array();
-					foreach ($dataAlbumFB as $k => $v) {
-						$images = current($v['images']);
-						$dicAlbumFB[] = array(
-							'cover_photo' => $v['source'],
-							'picture' => $v['picture'],
-							'id' => $v['id'],
-							'images' => $images
-						);
-					}
+					$dataAlbumFBPar = array();
+					do{
+						$dataQueryAlbumFB = $this->access->facebook->api('/'.$id.'/photos', 'GET', $dataAlbumFBPar);
+						$dataAlbumFB = $dataQueryAlbumFB['data'];
+						foreach ($dataAlbumFB as $k => $v) {
+							$images = current($v['images']);
+							$dicAlbumFB[] = array(
+								'cover_photo' => $v['source'],
+								'picture' => $v['picture'],
+								'id' => $v['id'],
+								'images' => $images
+							);
+						}
+
+						if (empty($dataQueryAlbumFB['paging'])) break;
+						$dataAlbumPaging = $dataQueryAlbumFB['paging'];
+						if (empty($dataAlbumPaging['next'])) break;
+						$next = $dataAlbumPaging['next'];
+						$query = parse_url($next, PHP_URL_QUERY);
+   			 			parse_str($query, $par); 
+   			 			$dataAlbumFBPar = array(
+   			 				'limit' => $par['limit'],
+   			 				'after' => $par['after']
+   			 			);
+					}while($dataAlbumFB);
 					$this->memcached_library->set('dicAlbumFB#' . $id, $dicAlbumFB, 60 * 60 * 24);
 				}
 
@@ -65,8 +79,13 @@ class Ajax extends MY_Controller {
 					$image_ori = $v['cover_photo'];
 					$picture = $v['picture'];
 					$album .= '
-					<li class="" data-albumid="'.$v['id'].'" data-hq-img="'.$image_hq.'" data-ori-img="'.$image_ori.'">
-						<img src="'.$picture.'" alt="'.$v['id'].'" class="img-polaroid" />
+					<li class="">
+						<img src="'.$picture.'" alt="'.$v['id'].'" class="img-polaroid" 
+						data-albumid="'.$v['id'].'" 
+						data-hq-img="'.$image_hq.'" 
+						data-ori-img="'.$image_ori.'"
+						id="imgready"
+						/>
 					</li>
 					';
 				}
@@ -76,6 +95,19 @@ class Ajax extends MY_Controller {
 				break;
 		}
 
+	}
+
+	function saveImageURL(){
+		$albumId = $this->input->get_post('albumId');
+		$albumHq = $this->input->get_post('albumHq');
+		$albumOri = $this->input->get_post('albumOri');
+		//$this->load->library('wideimage_library');
+		//$img = WideImage::load($albumHq);
+		$url = 'img/imgedit/' . $albumId . '.jpg';
+		//$img->saveToFile($url, 90);
+		$this->load->library('util');
+		$this->util->save_image($albumHq, $url, $albumId, 'img/imgedit/', '.jpg');
+		echo json_encode(array('albumHq' => cdn_url() . $url));
 	}
 
 }

@@ -18,7 +18,12 @@ class Auth extends MY_Controller {
 		$state = $this->input->get_post('state');
 		$code = $this->input->get_post('code');
 
-		if (empty($state) || empty($code)) redirect(base_url());
+		// save uri
+		$redirect_uri = $this->session->userdata('redirect_uri');
+		$redirect_uri = (empty($redirect_uri)) ? base_url() : $redirect_uri;
+		$this->session->unset_userdata('redirect_uri');
+
+		if (empty($state) || empty($code)) redirect($redirect_uri);
 
 		// extract fb
 		$this->dataFB = $this->access->facebook->api('/me');
@@ -38,7 +43,7 @@ class Auth extends MY_Controller {
 		}
 
 		$this->access->userLogin($user);
-		redirect(base_url());
+		redirect($redirect_uri);
 
 		//$this->_default_param("", "", "", "Register");
 		//$this->load->view("t/auth/register_view", $this->data);

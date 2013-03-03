@@ -55,6 +55,7 @@
 
             // Get image src and load it
             base.$el.attr('src', base.$el.attr('data-original-src'));
+            image.crossOrigin = 'http://profile.ak.fbcdn.net/crossdomain.xml';
             image.src = base.$el.attr('src');
             image.onload = function() {
 
