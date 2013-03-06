@@ -45,15 +45,16 @@ class Dashboard extends MY_Controller {
 	}
 
 	function canvas_dashboard(){
-
+		$this->load->library('canvas_library');
 		$this->load->model('canvas_model');
 		$fdi = $this->input->get_post('fdi');
+		$this->data['fdiData'] = "";
 		if (!empty($fdi)){
 			$fdiData = $this->canvas_model->getCanvasCollection($fdi);
-			echo '<pre>';
-			print_r($fdiData);
-			echo '</pre>';
-			die();
+			//echo '<pre>';
+			//print_r($fdiData);
+			//echo '</pre>';die();
+			$this->data['fdiData'] = $fdiData;
 		}
 
 		$product_size = $this->product_model->getProductSize($this->product->product_id);

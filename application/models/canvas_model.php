@@ -114,16 +114,19 @@ class Canvas_model extends CI_Model{
 
 	function savePhoto($images, $fotodetailid){
 		foreach($images as $image){
-			$fotodata = $image['fotodata'];
-			$filteredData = substr($fotodata, strpos($fotodata, ",")+1);
-			$unencodedData=base64_decode($filteredData);
-			$this->load->library('util');
-			$fileName = 'img/imgedit/' . $image['fileName'] . '_' . $this->util->create_code(3, 'text') . '.jpg';
-			$fp = fopen($fileName , 'wb' );
-			fwrite( $fp, $unencodedData);
-			fclose( $fp );
 
-			$fileName = cdn_url() . $fileName;
+			$fileName = $image['tmpfotodata'];
+			if (empty($fileName)){
+				$fotodata = $image['fotodata'];
+				$filteredData = substr($fotodata, strpos($fotodata, ",")+1);
+				$unencodedData=base64_decode($filteredData);
+				$this->load->library('util');
+				$fileName = 'img/imgedit/' . $image['fileName'] . '_' . $this->util->create_code(3, 'text') . '.jpg';
+				$fp = fopen($fileName , 'wb' );
+				fwrite( $fp, $unencodedData);
+				fclose( $fp );
+				$fileName = cdn_url() . $fileName;
+			}
 
 			$sql = "
 			SELECT 

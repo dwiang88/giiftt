@@ -15,7 +15,14 @@
 				$selectedPrize = $class = $product_detail_id_selected = "";
 				foreach($product_size as $k=>$v){
 					$class = "";
-					if ($k == 0) {
+					$flag = 0;
+					if ( ($k == 0 && empty($fdiData)) || 
+						(!empty($fdiData) && $v->product_detail_id == $fdiData['info']['product_detail_id']) 
+					) {
+						$flag = 1;
+					}
+
+					if ($flag == 1){
 						$selectedPrize = ($v->product_prize + $v->commision);
 						$class = "tmpl_active";
 						$product_detail_id_selected = $v->product_detail_id;
@@ -42,24 +49,24 @@
 		<div class="tool_template">
 			<h5>2. Select Template</h5>
 			<ul id="selectTemplate">
-				<li class="tmpl tmpl1 tmpl_active" data-template="1">
+				<?php 
+				$templateid = 1;
+				for($i=1; $i<=6; $i++){
+					$class = "";
+					if (
+						(empty($fdiData) && $i == 1) ||
+						(!empty($fdiData) && $fdiData['info']['templateid'] == $i)
+						){
+						$class = "tmpl_active";
+						$templateid = $i;
+					}
+				?>
+				<li class="tmpl tmpl<?php echo $i; ?> <?php echo $class; ?>" id="template<?php echo $i; ?>" data-template="<?php echo $i; ?>">
 					<span class="display"></span>
 				</li>
-				<li class="tmpl tmpl2" data-template="2">
-					<span class="display"></span>
-				</li>
-				<li class="tmpl tmpl3" data-template="3">
-					<span class="display"></span>
-				</li>
-				<li class="tmpl tmpl4" data-template="4">
-					<span class="display"></span>
-				</li>
-				<li class="tmpl tmpl5" data-template="5">
-					<span class="display"></span>
-				</li>
-				<li class="tmpl tmpl6" data-template="6">
-					<span class="display"></span>
-				</li>
+				<?php 
+				}
+				?>
 			</ul>
 		</div>
 
@@ -69,6 +76,12 @@
 
 	<h5>3. Design</h5>
 	<div class="canvas_wrapper" >
+
+		<?php 
+		if (!empty($fdiData)){
+			echo $canvasTemplate = $this->canvas_library->selectTemplate($fdiData['info']['templateid'], $fdiData['images']);
+		}
+		?>
 
 		<?php /***
 
@@ -926,10 +939,11 @@
 	<div class="formSubmit">
 
 		<input type="hidden" name="product_detail_id" id="product_detail_id" value="<?php echo $product_detail_id_selected; ?>" />
-		<input type="hidden" name="templateid" id="templateid" value="1" />
+		<input type="hidden" name="templateid" id="templateid" value="<?php echo $templateid; ?>" />
 		<input type="hidden" name="type" id="type" value="canvas" />
-		<input type="hidden" name="fotodetailid" id="fotodetailid" value="0" />
-		<input type="hidden" name="foto_collection_id" id="foto_collection_id" value="0" />
+		<input type="hidden" name="fotodetailid" id="fotodetailid" value="<?php echo (empty($fdiData)) ? 0 : $fdiData['info']['foto_detail_id']; ?>" />
+		<input type="hidden" name="foto_collection_id" id="foto_collection_id" value="<?php echo (empty($fdiData)) ? 0 : $fdiData['info']['foto_collection_id']; ?>" />
+		<input type="hidden" name="fdiData" id="fdiData" value="<?php echo (empty($fdiData)) ? 0 : 1; ?>" />
 
 		<button type="button" id="saveDesign" class="btn btn-inverse">Save Design</button>
 		<button type="button" id="addToCart" class="btn btn-warning">Add to Cart</button>

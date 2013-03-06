@@ -34,7 +34,7 @@
 			base.$frame.append('<div class="jwc_controls" style="display:'+(base.options.showControlsOnStart ? 'block' : 'none')+';">'
 				+'<span class="title_drag">click to drag</span><a href="#" class="jwc_zoom_in"><i class="icon-plus"></i></a><a href="#" class="jwc_zoom_out"><i class="icon-minus"></i></a><a href="#" class="jwc_change_image"><i class="icon-picture"></i></a></div>');
 			base.$frame.css({'overflow': 'hidden', 'position': 'relative', 'width': base.options.targetWidth, 'height': base.options.targetHeight});
-			base.$image.css({'position': 'absolute', 'top': '0px', 'left': '0px'});
+			if (base.options.cssControl) base.$image.css({'position': 'absolute', 'top': '0px', 'left': '0px'});
 			initializeDimensions();
 
 			base.$frame.delegate('.jwc_zoom_in', 'click.'+base.namespace, base.zoomIn);
@@ -55,9 +55,10 @@
 			} else if(percent < base.minPercent) {
 				percent = base.minPercent;	
 			}
+			console.log("percent : " + percent);
 			base.$image.width(Math.ceil(base.originalWidth*percent));
 			base.workingPercent = percent;
-			focusOnCenter();
+			if (base.options.cssControl) focusOnCenter();
 			updateResult();
 		};
 		base.zoomIn = function() {
@@ -74,11 +75,20 @@
 		function initializeDimensions() {
 			if(base.originalWidth == 0) {
 				base.originalWidth = base.$image.width();
+			}
+			if (base.originalHeight == 0 || base.originalHeight == undefined){
 				base.originalHeight = base.$image.height();
+				//console.log(base.originalHeight);
 			}
 			if(base.originalWidth > 0) {
 				var widthRatio = base.options.targetWidth / base.originalWidth;
 				var heightRatio = base.options.targetHeight / base.originalHeight;
+				
+				console.log(base.originalWidth+" "+base.originalHeight);
+				console.log("Width : " +widthRatio+" "+heightRatio+" "+base.originalWidth+" "+base.options.targetWidth+" "+widthRatio);
+				console.log("Height : " +widthRatio+" "+heightRatio+" "+base.originalHeight+" "+base.options.targetHeight+" "+heightRatio);
+				console.log("==================================");
+
 				//base.minPercent = (widthRatio >= heightRatio) ? widthRatio : heightRatio;
 				if(widthRatio >= heightRatio) {
 					base.minPercent = (base.originalWidth < base.options.targetWidth) ? (base.options.targetWidth / base.originalWidth) : widthRatio;
@@ -151,6 +161,7 @@
 		loadingText: 'Loading...',
 		smartControls: true,
 		showControlsOnStart: false,
+		cssControl : true,
 		onChange: function() {}
 	};
 	

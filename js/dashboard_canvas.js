@@ -1,17 +1,4 @@
 $(function() {
-	/*
-	$('.canvas').find('img.canvas_image').each(function(){
-		//$(this).filterMe();
-		$(this).jWindowCrop({
-			targetWidth: $(this).parent().width(),
-			targetHeight: $(this).parent().height(),
-			loadingText: 'Loading ...',
-			onChange: function(result) {
-				console.log(result);
-			}
-		});
-	});
-	*/
 	$('.canvas_wrapper').delegate('.filter_effect li', 'click', function(){
 		var el = $(this);
 		var c = el.closest('.block');
@@ -36,7 +23,35 @@ $(function() {
 		$('#templateid').val(tmpl);
 		return false;
 	});
-	$('#selectTemplate').find('li:first-child').click();
+	var templateid = $('#templateid').val();
+	var fdiData = parseInt($('#fdiData').val());
+	if (fdiData == 0){
+		$('#selectTemplate').find('li#template' + templateid).click();
+	}else{
+		$('.canvas').find('img.canvas_image').each(function(k,v){
+			var filter = $(this).attr('data-filter');
+			$(this).next().find('li').each(function(){
+				if ($(this).find('span').text() == filter){
+					$(this).closest('li').addClass('active');
+				}
+			});
+			//$(this).show();
+			$(this).filterMe();
+			$(this).jWindowCrop({
+				targetWidth: $(this).parent().width(),
+				targetHeight: $(this).parent().height(),
+				loadingText: 'Loading ...',
+				cssControl : false,
+				onChange: function(result) {
+					//console.log(result);
+					$(this).attr('data-crop_x', result.cropX);
+					$(this).attr('data-crop_y', result.cropY);
+					$(this).attr('data-crop_w', result.cropW);
+					$(this).attr('data-crop_h', result.cropH);
+				}
+			});
+		});
+	}
 	$('#selectSize').find('li').on('click', function(){
 		var el = $(this);
 		el.siblings().removeClass('tmpl_active');
@@ -148,6 +163,7 @@ $(function() {
 				'data-crop_h=""' +
 				'data-filter="Original"' +
 				'class="canvas_image" '+
+				'data-fotodata=""' +
 				'/>'+
 				'<div class="filter_effect xsmall_block">' +
 				'	<ul>' +
@@ -171,6 +187,7 @@ $(function() {
 						targetWidth: $(this).parent().width(),
 						targetHeight: $(this).parent().height(),
 						loadingText: 'Loading ...',
+						cssControl : true,
 						onChange: function(result) {
 							//console.log(result);
 							$(this).attr('data-crop_x', result.cropX);
@@ -218,7 +235,8 @@ $(function() {
 				style : $(this).attr('style'),
 				urutan : urutan,
 				filter : $(this).attr('data-filter'),
-				fileName : $(this).attr('data-fileName')
+				fileName : $(this).attr('data-fileName'),
+				tmpfotodata : $(this).attr('data-fotodata')
 			};
 			images.push(a);
 		});
