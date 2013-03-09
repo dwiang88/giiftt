@@ -77,6 +77,7 @@ $(function() {
   		$('.loader_container').fadeIn();
   		$.post('/ajax/getPhotoAlbum', {
   			type : rel,
+  			Preview : 1
   		}, function(data){
   			if (data.album){
   				if (rel == "facebookAlbum"){
@@ -213,8 +214,7 @@ $(function() {
 		blockImage = "";
 	});
 
-	$('#saveDesign').on('click', function(){
-		var el = $(this);
+	var saveDesign = function(savedesign, addtocard, paynow){
 		var canvas = $('.canvas');
 		var halaman = canvas.find('.canvas_template').attr('data-halaman');
 		var templateid = $('#templateid').val();
@@ -253,16 +253,36 @@ $(function() {
 			type : type,
 			fotodetailid : fotodetailid,
 			product_detail_id : product_detail_id,
-			foto_collection_id : foto_collection_id
+			foto_collection_id : foto_collection_id,
+			savedesign : savedesign,
+			addtocard : addtocard,
+			paynow : paynow
 		}, function(data){
-			if (data.fotodetailid){
-				$('#fotodetailid').val(data.fotodetailid);
-				$('#foto_collection_id').val(data.fotocollectionid);
-				alert('Design saved successfull.');
+			if (savedesign){
+				if (data.fotodetailid){
+					$('#fotodetailid').val(data.fotodetailid);
+					$('#foto_collection_id').val(data.fotocollectionid);
+					alert('Design saved successfull.');
+				}
+			}else if (addtocard){
+				window.location = data.url;
+			}else if (paynow){
+
 			}
 			$('.loader_overlay').hide();
 		}, 'json');
+	};
+
+	$('#saveDesign').on('click', function(){
+		var el = $(this);
+		saveDesign(1, 0, 0);
 		return false;
+	});
+
+	$('#addToCart').on('click', function(){
+		var el = $(this);
+		saveDesign(0, 1, 0);
+		//return false;
 	});
 
 });

@@ -1355,3 +1355,62 @@ li.tmpl:hover{
 }
 
 
+
+
+.shopping_cart_container h2{
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.tableItemDetail{
+	width:40%;
+}
+.tableItemDetail h3{
+	margin: 0;
+	line-height: 1;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+.tableItemDetail p{
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1;
+	margin-bottom: 5px;
+}
+.tablePrice b{
+	font-size: 17px;
+	margin-right: 40px;
+	display: inline-block;
+	width: 300px;
+}
+.tableQty b{
+	margin-top: 3px;
+	display: block;
+}
+
+
+
+
+.products{
+	margin-top:10px;
+}
+.products h3{
+	margin: 0;
+	line-height: 1;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+.products p{
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1;
+	margin-bottom: 5px;
+}
+
+
+.menu_order span{
+	position: relative;
+	top: 9px;
+}
+
+
+

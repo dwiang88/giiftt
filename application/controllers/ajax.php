@@ -122,14 +122,56 @@ class Ajax extends MY_Controller {
 		$fotodetailid = $this->input->get_post('fotodetailid');
 		$product_detail_id = $this->input->get_post('product_detail_id');
 		$foto_collection_id = $this->input->get_post('foto_collection_id');
+
+		$savedesign = $this->input->get_post('savedesign');
+		$addtocard = $this->input->get_post('addtocard');
+		$paynow = $this->input->get_post('paynow');
+
 		$this->load->model('canvas_model');
 		$fotocollectionid = $this->canvas_model->createCollection($foto_collection_id, $product_detail_id);
 		$fotodetailid = $this->canvas_model->savePhotoDetail($halaman, $templateid, $type, $backgroundid = 0, $fotodetailid, $fotocollectionid);
 		$this->canvas_model->savePhoto($images, $fotodetailid);
-		echo json_encode(array(
-			'fotodetailid' => $fotodetailid,
-			'fotocollectionid' => $fotocollectionid
-		));
+		
+		if (!empty($savedesign)){
+			echo json_encode(array(
+				'fotodetailid' => $fotodetailid,
+				'fotocollectionid' => $fotocollectionid
+			));
+		}else {
+
+			if (!empty($addtocard) || !empty($paynow)){
+				// 1. simpan ke session shopping cart
+				$shoppingCart = $this->session->userdata('shoppingCart');
+				$flag = 0;
+				$qty = 1;
+				if (!empty($shoppingCart)){
+					foreach ($shoppingCart as $k => $v) {
+						if ($v['fotocollectionid'] == $foto_collection_id){
+							$v['qty']++;
+							if ($v['qty'] >= 10) $v['qty'] = 10;
+ 							$qty = $v['qty'];
+							$flag = 1;
+						}
+					}
+				}
+				$shoppingCart[$fotocollectionid] = array(
+					'fotocollectionid' => $fotocollectionid,
+					'qty' => $qty
+				);
+				$this->session->set_userdata('shoppingCart', $shoppingCart);
+			}
+
+			if (!empty($addtocard)){
+				// 2. redirect ke halaman shopping cart
+				echo json_encode(array(
+					'url' => base_url() . "checkout/shopping_cart"
+				));
+			}else if (!empty($paynow)){
+				// 2. create order cart dan order cart detail
+				// 3. redirect ke halaman checkout payment
+			}
+
+		}
 	}
 
 }

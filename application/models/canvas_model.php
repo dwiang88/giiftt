@@ -76,6 +76,14 @@ class Canvas_model extends CI_Model{
 			";
 			$this->db->query($sql, array($product_detail_id));
 			$foto_collection_id = $this->db->insert_id();
+		}else{
+			$sql = "
+			UPDATE foto__collection SET
+			product_detail_id = ?
+			WHERE 1
+			AND foto_collection_id = ?
+			";
+			$this->db->query($sql, array($product_detail_id, $foto_collection_id));
 		}
 		return $foto_collection_id;
 	}

@@ -75,6 +75,11 @@
                                 <li><a href="<?php echo base_url(); ?>auth/logout">Logout</a></li>
                             </ul>
                         </li>
+                        <?php 
+                        $shoppingCart = $this->session->userdata('shoppingCart');
+                        if (!empty($shoppingCart)){ ?>
+                        <li class="menu_order"><span class="label label-info"><a href="<?php echo base_url(); ?>checkout/shopping_cart" style="color:white;"><?php echo count($shoppingCart); ?> Order<?php echo (!empty($order) && $order > 1) ? "s" : ""; ?></a></span></li>
+                        <?php } ?>
                         <?php }else{ ?>
                         <li><a href="<?php echo $this->access->loginUrl; ?>" class="btn_loginfb">Login FB</a></li>
                         <?php } ?>

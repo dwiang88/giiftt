@@ -59,6 +59,7 @@ class Dashboard extends MY_Controller {
 
 		$product_size = $this->product_model->getProductSize($this->product->product_id);
 		$this->data['product_size'] = $product_size;
+
 		$this->_default_param(
 			array(
 				"css/jWindowCrop.css"

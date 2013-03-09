@@ -945,9 +945,9 @@
 		<input type="hidden" name="foto_collection_id" id="foto_collection_id" value="<?php echo (empty($fdiData)) ? 0 : $fdiData['info']['foto_collection_id']; ?>" />
 		<input type="hidden" name="fdiData" id="fdiData" value="<?php echo (empty($fdiData)) ? 0 : 1; ?>" />
 
-		<button type="button" id="saveDesign" class="btn btn-inverse">Save Design</button>
-		<button type="button" id="addToCart" class="btn btn-warning">Add to Cart</button>
-		<button type="button" id="payNow" class="btn btn-success">Pay Now</button>
+		<button type="submit" id="saveDesign" name="saveDesign" class="btn btn-inverse">Save Design</button>
+		<button type="submit" id="addToCart" name="addToCart" class="btn btn-warning">Add to Cart</button>
+		<button type="submit" id="payNow" name="payNow" class="btn btn-success">Pay Now</button>
 	</div>
 
 	<div class="clearfix"></div>
